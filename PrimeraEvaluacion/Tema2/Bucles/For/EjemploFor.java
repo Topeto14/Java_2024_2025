@@ -125,7 +125,7 @@ public class EjemploFor {
         int countImpar = 0 ;
         int numero;
         int totalPares = 0, totalImpares = 0 ;
-        for (int i = 1; i <=100 ; i++) {
+        for (int i = 1; i <=10 ; i++) {
             numero = (int) (Math.random() * (100)) + 1;
             if ( i%2 == 0) {
                 totalPares = totalPares + numero;
