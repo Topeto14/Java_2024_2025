@@ -10,15 +10,15 @@ public class EjercicioBucle {
 
         //6,7,10,11,1 --> Suma = 35, Media = 35/5
 
-        int numero = -1;
+        int numero = -1 ;
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce números ");
 
+        int count = 0 ; // Contador
+        double sum = 0 ; // Acumulador
 
-        int count = 0 ;
-        double sum = 0 ;
         boolean cero= false;
-        while (numero!=0){
+        while (numero!=0){ // Mientras que no ponga el 0 seguira el bucle poniendo los números
             numero = Integer.parseInt(sc.nextLine());
 
             //Sumarlo en el acumulador si es el número de salida

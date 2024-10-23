@@ -9,11 +9,14 @@ public class NumerosPrimos {
         //Indicador
         //7-> 7/6 resto!=0, 7/5 resto !=0, 7/4 resto!=0, ... , 7/2 != 0
         //Si algún resto da == 0, significa que No es primo
+
         Scanner sc = new Scanner(System.in);
-        int number = 7 ;
-        boolean esPrimo = true;
-        for (int i = number -1 ; i >= 2 ; i--) {
-            if (number % i == 0){
+        System.out.println("Ingrese un numero y te dire si es primo  ");
+        int number = sc.nextInt(); ;
+        boolean esPrimo = true; // Indicador se pone a true, si encuentro un divisor a false
+
+        for (int i = number - 1 ; i >= 2 ; i--) {
+            if (number % i == 0){ // Si hay algun divisor, no es primo
                 esPrimo =false;
                 System.out.println(i);
         }

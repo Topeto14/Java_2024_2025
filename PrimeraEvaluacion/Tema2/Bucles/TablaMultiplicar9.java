@@ -8,17 +8,14 @@ public class TablaMultiplicar9 {
             System.out.println( number + " X " + i + " = " + i * number);
         }
          */
-
+        //Tabla de multiplicar del 1 al 20 menos la 10
         for (int i = 1; i <=20 ; i++) {
             if (i != 10) {
                 for (int j = 1; j <=10 ; j++) {
                     System.out.println(i + " X " + j + " = " + i*j );
                 }
             }
-
-
-            }
-
         }
     }
+}
 
