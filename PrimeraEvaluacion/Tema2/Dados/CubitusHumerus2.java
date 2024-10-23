@@ -57,7 +57,7 @@ public class CubitusHumerus2 {
         } else if (countDadoHumerus > countDadoCubitus) {
             System.out.println(" Gana Humerus " + countDadoCubitus + " a " + countDadoHumerus);
         } else {
-            System.out.println("Empatan" + countDadoCubitus + " a " +  countDadoHumerus );
+            System.out.println(" Empatan " + countDadoCubitus + " a " +  countDadoHumerus );
         }
 
 
