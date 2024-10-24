@@ -1,6 +1,6 @@
 package Tema2.Bucles;
 
-public class EjercicioClase2 {
+public class ForInsideFor {
     public static void main(String[] args) {
         //Tenemos que pintar la siguiente figura
         //10000000
