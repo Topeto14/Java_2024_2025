@@ -3,34 +3,68 @@ package Tema2.Unidad2Entregar;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-    public static int mayorDos( int a, int b){
+    public static int mayor(int a, int b) {
         if (a > b)
             return a;
-        if (b > a)
+        else if (a < b)
             return b;
         else
             return a;
     }
-    /**
-     * Metodo que devuelve el Mayor de 3 Números
-     * @param a
-     * @param b
-     * @param c
-     * @return
-     */
-    public static int mayorTres(int a, int b, int c){
+
+    public static int mayor(int a, int b, int c) {
         if (a > b && a > c)
             return a;
-        if (b > a && b > c)
+        else if (b > a && b > c)
             return b;
-        if (c > a && c > b)
+        else if (c > a && c > b)
             return c;
-        else
+        else                            //los tres iguales
             return a;
     }
-    public static int mayorMejorado (int a, int b, int c){
-        return mayorTres(a,b,c);
+
+    public static int mayorMejorado(int a, int b, int c) {
+        return mayor(a, b, mayor(a, c));
     }
+
+    public static int mayorEntreCuatro(int a, int b, int c, int d) {
+        return mayor(mayor(a,b), mayor(c,d));
+    }
+
+    public static int mayorForTres (){
+        Scanner sc = new Scanner(System.in);
+        int a = -999999999;
+        try {
+            for (int i = 1; i <=3; i++) {
+                System.out.println(" Dime el numero " + i  );
+                int numero = Integer.parseInt(sc.nextLine());
+                if (numero > a) {
+                    a = numero;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(" Introduce un número entero ");
+        }
+        return a;
+    }
+    public static int mayorForCuatro () {
+        Scanner sc = new Scanner(System.in);
+        int a = -999999999;
+        try {
+            for (int i = 1; i <= 4; i++) {
+                System.out.println(" Dime el numero " + i);
+                int numero = Integer.parseInt(sc.nextLine());
+                if (numero > a) {
+                    a = numero;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(" Introduce un número entero ");
+
+        }
+        return a;
+    }
+
     public static void main(String[] args) {
         // Crea una función (método) que reciba como parámetros tres números enteros y devuelva el mayor de
         // los tres números.
@@ -38,16 +72,9 @@ public class Ejercicio1 {
         // Sería así:
         // public int mayor (int a, int b, int c) { … }
 
-        Scanner sc = new Scanner(System.in);
-
-        int numero = 0 ;
-        int mayor ;
-        for (int i = 1; i <=3 ; i++) {
-            System.out.println(" Dime el "+ i + " número ");
-            numero = Integer.parseInt(sc.nextLine());
-            mayor = numero;
-            numero = mayor;
-        }
-        System.out.println(mayorMejorado(numero,numero,numero));
+        int mayor = mayorForTres();
+        System.out.println("El numero mayor con tres números es : " + mayor);
+        int mayorCuatro = mayorForCuatro();
+        System.out.println("El número mayor con cuatro número es : " + mayorCuatro);
     }
 }
