@@ -31,7 +31,7 @@ public class Ejercicio1Mayor {
         return mayor(mayor(a,b), mayor(c,d));
     }
 
-    public static int mayorForTres (){
+    public static void mayorForTres (){
         Scanner sc = new Scanner(System.in);
         int a = -999999999; // Se pone el número mas bajo posible para que al poner otro sea si o si mayor
         try {
@@ -42,12 +42,13 @@ public class Ejercicio1Mayor {
                     a = numero;        // a sera el número. osea el mayor
                 }
             }
+            System.out.println("El numero mayor es " + a );
         }catch (Exception e){
             System.out.println(" Introduce un número entero ");
         }
-        return a;
+
     }
-    public static int mayorForCuatro () {
+    public static void mayorForCuatro () {
         Scanner sc = new Scanner(System.in);
         int a = -999999999;
         try {
@@ -58,11 +59,11 @@ public class Ejercicio1Mayor {
                     a = numero;
                 }
             }
+            System.out.println("El numero mayor es " + a );
         } catch (Exception e) {
             System.out.println(" Introduce un número entero ");
 
         }
-        return a;
     }
 
     public static void main(String[] args) {
@@ -72,9 +73,8 @@ public class Ejercicio1Mayor {
         // Sería así:
         // public int mayor (int a, int b, int c) { … }
 
-        int mayor = mayorForTres();
-        System.out.println("El numero mayor con tres números es : " + mayor);
-        int mayorCuatro = mayorForCuatro();
-        System.out.println("El número mayor con cuatro número es : " + mayorCuatro);
+        mayorForTres();
+        mayorForCuatro();
+
     }
 }

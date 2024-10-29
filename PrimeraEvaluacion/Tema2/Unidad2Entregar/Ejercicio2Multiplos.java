@@ -73,7 +73,7 @@ public class Ejercicio2Multiplos {
         }
         return true;
     }
-        public static int elverdaderoMultiplo() {
+        public static void elverdaderoMultiplo() {
             Scanner sc = new Scanner(System.in);
             int a = 2;
             int b = 3;
@@ -101,7 +101,6 @@ public class Ejercicio2Multiplos {
             } else {
                 System.out.println(" El número " + number + " NO! es multiplo de " + d);
             }
-            return number ;
         }
         /*
         public boolean multiplos (int a){
@@ -118,8 +117,8 @@ public class Ejercicio2Multiplos {
     public static void main(String[] args) {
         //Programa que lea un número por teclado e indique si es múltiplo de 2, 3, 5 o 7.
 
-        int multiplo = elverdaderoMultiplo() ;
-        System.out.println(multiplo);
+       elverdaderoMultiplo() ;
+
     }
 
 }
