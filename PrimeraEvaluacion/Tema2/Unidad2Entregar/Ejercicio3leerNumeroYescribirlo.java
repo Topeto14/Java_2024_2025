@@ -3,7 +3,7 @@ package Tema2.Unidad2Entregar;
 import java.util.Scanner;
 
 public class Ejercicio3leerNumeroYescribirlo {
-    public static String leerNumero () {
+    public static void  leerNumero () {
         Scanner sc = new Scanner(System.in);
         System.out.println(" Escribe un número que te lo voy a poner con letras ");
         int number  = sc.nextInt();
@@ -31,14 +31,13 @@ public class Ejercicio3leerNumeroYescribirlo {
             }else {
                 System.out.println(" Introduce solo numero de un  digito ");
             }
-        return String.valueOf(number);
     }
     public static void main(String[] args) {
         //Programa que lea un número positivo de un dígito por teclado y diga en letra a qué dígito corresponde
         // (uno, dos, tres, cuatro, …). Ejemplo: si se introduce el 1, se mostrará por pantalla el “uno”;
         // si se introduce el 11, se mostrará el mensaje “Error: no es un número de un dígito”.
 
-        String leer = leerNumero();
-        System.out.println(leer);
+       leerNumero();
+
     }
 }

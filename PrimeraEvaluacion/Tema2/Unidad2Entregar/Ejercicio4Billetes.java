@@ -3,19 +3,13 @@ package Tema2.Unidad2Entregar;
 import java.util.Scanner;
 
 public class Ejercicio4Billetes {
+
     public static void billetes () {
         Scanner sc = new Scanner(System.in);
         System.out.println(" Dime una cantidad de dinero ");
         int cantidadBilletes = Integer.parseInt(sc.nextLine());
-        int billetesQuinientos = 500;
-        int billetesDoscientos = 200;
-        int billetesCien = 100;
-        int billetesCincuenta = 50;
-        int billetesVeinte = 20;
-        int billetesDiez = 10;
-        int billetesCinco = 5;
-        int monedasDos = 2;
-        int monedasUno = 1;
+        int billetesQuinientos = 500, billetesDoscientos = 200,billetesCien = 100,billetesCincuenta = 50,billetesVeinte = 20;
+        int billetesDiez = 10,billetesCinco = 5,monedasDos = 2,monedasUno = 1;
         int resto;
         do {
             billetesQuinientos = cantidadBilletes / 500;
