@@ -2,7 +2,7 @@ package Tema2.Unidad2Entregar;
 
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class Ejercicio1Mayor {
     public static int mayor(int a, int b) {
         if (a > b)
             return a;
@@ -33,13 +33,13 @@ public class Ejercicio1 {
 
     public static int mayorForTres (){
         Scanner sc = new Scanner(System.in);
-        int a = -999999999;
+        int a = -999999999; // Se pone el número mas bajo posible para que al poner otro sea si o si mayor
         try {
-            for (int i = 1; i <=3; i++) {
+            for (int i = 1; i <=3; i++) { // Del uno a la tres que son los números de intentos
                 System.out.println(" Dime el numero " + i  );
-                int numero = Integer.parseInt(sc.nextLine());
-                if (numero > a) {
-                    a = numero;
+                int numero = Integer.parseInt(sc.nextLine()); // Se introduce el númer por teclado
+                if (numero > a) {      // Si número es mayor que a = -99999999
+                    a = numero;        // a sera el número. osea el mayor
                 }
             }
         }catch (Exception e){

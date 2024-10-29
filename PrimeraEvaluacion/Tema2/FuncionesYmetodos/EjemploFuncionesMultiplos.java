@@ -20,7 +20,7 @@ public class EjemploFuncionesMultiplos {
         int num1 = 25;
         int num2 = 5;
 
-        System.out.println(multiplo(125, 3));
+        System.out.println(multiplo(125, 5));
         System.out.println(multiplo(num1, num2));
 
 
