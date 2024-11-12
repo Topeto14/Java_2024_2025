@@ -7,7 +7,15 @@ public class Ejemplo2DiasSemana {
         /*
         String dias[]= {"Lunes", " Martes ", " Miercoles ", " Jueves ", " Viernes ", " Sabado ", " Domingo "}
             */
+        String dias[] = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
+                "Sábado", "Domingo"};
+
+        for(int i=0; i < dias.length; i++) {
+            if (dias[i].length() > 5)
+                System.out.println(dias[i]);
         }
+
+    }
 
     }
 

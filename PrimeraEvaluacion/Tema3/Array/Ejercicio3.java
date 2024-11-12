@@ -1,45 +1,45 @@
 package Tema3.Array;
 
 public class Ejercicio3 {
-    /*
-    public static int generarNumero(int min, int max){
-        return (int) (Math.random()*(max-min+1)+min);
-    }
-    public static void boolean esPrimo (int number){
-        boolean esPrimo = true; // Indicador se pone a true, si encuentro un divisor a false
 
-        for (int i = number - 1 ; i >= 2 ; i--) {
-            if (number % i == 0){ // Si hay algun divisor, no es primo
-                esPrimo =false;
-                System.out.println(i);
+    public static int generarNumeroAleatorio(int mayor, int menor) {
+        return (int) (Math.random() * (mayor - menor + 1)) + menor;
+    }
+
+    /**
+     * Devuelve true si num es Primo, false en caso contrario
+     * @param num
+     * @return
+     */
+    public static boolean esPrimo(int num) {
+        boolean esPrimo = true;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                esPrimo = false;
+                break; //Una vez encuentre un divisor que termine
             }
         }
-        if (esPrimo){
-            System.out.println(number +" Es primo");
-        }else{
-            System.out.println(number + " No es primo");
-        }
+        return esPrimo;
     }
+
+
     public static void main(String[] args) {
-        // Genera un array de 20 números enteros (entre 1 y 1000)
-        // Muestra sólo aquelos que sean primos
 
-        int genera []= new int [20];
+        //Genera un array de 20 números enteros aleatorios (entre 1 y 1000)
+        //Muestra sólo aquellos que sean primos
 
-        for (int i = 0; i < genera.length; i++) {
-            genera [i] = generarNumero(1,1000);
+        int numeros[] = new int[20];
+
+        for(int i=0; i < numeros.length; i++) {
+            numeros[i] = generarNumeroAleatorio(1000, 1);
         }
 
-        for (int i = 0; i < genera.length; i++) {
-            for (int j = genera[i] -1 ; j >=2  ; i--) {
-                if (e) {
-                    System.out.println(genera[i]);
-            }
-
-
+        for (int i=0; i < numeros.length; i++) {
+            if (esPrimo(numeros[i]))
+                System.out.println(numeros[i]);
         }
+
 
 
     }
-}*/
 }
