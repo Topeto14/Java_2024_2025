@@ -17,21 +17,23 @@ public class Ejercicio3 {
             System.out.println(Array[i]);
 
         }
-
         int numeroFinal [] = new int[size];
-        int j = 0;
-        for (int i = 0; i < Array.length; i++) {
-            System.out.println(" Dime cual es el último digito que quieres que te enseñe de los numeros que tenemos ");
-            int ultimoDigito = Integer.parseInt(sc.nextLine());
-
-                if (Array[i] % 10 == ultimoDigito) {
-                    numeroFinal[j]= Array[i];
-                    j++;
-                }
-            System.out.println(numeroFinal[i]);
+        /*int count = 0;*/
+        System.out.println(" Dime cual es el último digito que quieres que te enseñe de los numeros que tenemos ");
+        int ultimoDigito = Integer.parseInt(sc.nextLine());
+        while (ultimoDigito < 0 || ultimoDigito > 9) {
+            System.out.println("Tienes que introducir un número entre 0 y 9");
+            ultimoDigito = Integer.parseInt(sc.nextLine());
         }
+        System.out.println("Los numeros acabados en  " + ultimoDigito+ " Son : ");
 
-
+        for (int i = 0; i < Array.length; i++) {
+                if (Array[i] % 10 == ultimoDigito) {
+                    numeroFinal[i] = Array[i];
+                    /*count++;*/
+                    System.out.println(numeroFinal[i]);
+                }
+        }
     }
     public static void main(String[] args) {
         // Crea un array de números de un tamaño pasado por teclado, el array contendrá números aleatorios entre 1 y 300
