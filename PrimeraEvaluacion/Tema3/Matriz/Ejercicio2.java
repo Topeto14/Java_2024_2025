@@ -34,7 +34,7 @@ public class Ejercicio2 {
             }
             System.out.println();
         }
-        System.out.println("------------");
+        System.out.println("-------------");
         System.out.println(" La suma de la columna 1 es " + sumaColumna1);
         System.out.println(" La suma de la columna 2 es " + sumaColumna2);
         System.out.println(" La suma de la columna 3 es " + sumaColumna3);
