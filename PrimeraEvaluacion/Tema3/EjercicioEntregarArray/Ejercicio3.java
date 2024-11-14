@@ -17,16 +17,29 @@ public class Ejercicio3 {
             System.out.println(Array[i]);
 
         }
+<<<<<<< HEAD
         int numeroFinal[] = new int[size];
+=======
+        int numeroFinal [] = new int[size];
+>>>>>>> origin/main
 
         for (int i = 0; i < Array.length; i++) {
             System.out.println(" Dime cual es el último digito que quieres que te enseñe de los numeros que tenemos ");
             int ultimoDigito = Integer.parseInt(sc.nextLine());
+<<<<<<< HEAD
                 if (Array[i] % 10 == ultimoDigito) {
                     numeroFinal[Array[i]]= Array[i];
                 }
             System.out.println(numeroFinal[i]);
         }
+=======
+            if (Array[i] % 10 == ultimoDigito) {
+                numeroFinal[ultimoDigito] = Array[i];
+
+            }
+        }
+        System.out.println(numeroFinal[i]);
+>>>>>>> origin/main
     }
     public static void main(String[] args) {
         // Crea un array de números de un tamaño pasado por teclado, el array contendrá números aleatorios entre 1 y 300
