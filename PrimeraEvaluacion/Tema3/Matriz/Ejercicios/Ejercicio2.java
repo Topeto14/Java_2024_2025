@@ -1,4 +1,4 @@
-package Tema3.Matriz;
+package Tema3.Matriz.Ejercicios;
 
 public class Ejercicio2 {
     public static int generarNumero(int min, int max){
