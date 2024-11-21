@@ -1,6 +1,10 @@
 package Tema3.Matriz.Ejercicios;
 
 public class Ejercicio3 {
+    public static double generarNumero(double min, double max){
+        return (double) (Math.random()*(max-min+1)+min);
+    }
+
     public static void main(String[] args) {
         /*
             En una plantación tenemos seis zonas diferentes.
@@ -20,6 +24,13 @@ public class Ejercicio3 {
 
          */
 
-        double sensores[][] = new double[5][2];
+        double sensores[][] = new double[6][3];
+
+        for (int i = 0; i < sensores.length ; i++) {
+            sensores[i][0] = generarNumero(-5,55);
+            sensores[i][1] = generarNumero(0,100);
+            sensores [i][2] = generarNumero(10,0);
+        }
+
     }
 }
