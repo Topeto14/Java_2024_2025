@@ -113,7 +113,7 @@ public class Enunciado1 {
 
                 //Pintar tablero
                 pintar(tablero);
-                comprobarGanador(tablero);
+               /* comprobarGanador(tablero);*/
             }
 
 
