@@ -65,28 +65,28 @@ public class Enunciado1 {
             for (int i = 0; i < tablero.length; i++) {
                 for (int j = 0; j < tablero[i].length; j++) {
                     if (j != tablero.length - 1  && i != tablero.length - 1) { // Comprobar 3 posiciones antes del final
-                        if (tablero[i][j] == 1 &&
+                        if (tablero[i][j] == 1 &&        // Empezar la i con un i despues con un i.length -1 y asi sucesivamente.
                                 tablero[i + 1][j] == 1 && // Comprobación de vertical con la i
                                 tablero[i + 2][j] == 1 &&
-                                tablero[i + 3][j] == 1 &&
-                                tablero[i][j + 1] == 1 &&  // Comprobación de horizontal con la j
+                                tablero[i + 3][j] == 1) /*||
+                                (tablero[i][j + 1] == 1 &&  // Comprobación de horizontal con la j
                                 tablero[i][j + 2] == 1 &&
-                                tablero[i][j + 3] == 1 &&
-                                tablero[i + 1][j + 1] == 1 &&  // Comprobación de diagonal con la i+1 && j+1
+                                tablero[i][j + 3] == 1) ||
+                                (tablero[i + 1][j + 1] == 1 &&  // Comprobación de diagonal con la i+1 && j+1
                                 tablero[i + 1][j + 2] == 1 &&
-                                tablero[i + 1][j + 3] == 1) {
+                                tablero[i + 1][j + 3] == 1)) {
                             System.out.println(" El ganador es el jugador 1 ");
                         }
-                        else if (tablero[i][j] == 2 &&
+                        else if ((tablero[i][j] == 2 &&
                                 tablero[i + 1][j] == 2 && // Comprobación de vertical con la i
                                 tablero[i + 2][j] == 2 &&
-                                tablero[i + 3][j] == 2 &&
-                                tablero[i][j + 1] == 2 && // Comprobación de horizontal con la j
+                                tablero[i + 3][j] == 2))
+                                /*(tablero[i][j + 1] == 2 && // Comprobación de horizontal con la j
                                 tablero[i][j + 2] == 2 &&
-                                tablero[i][j + 3] == 2 &&
-                                tablero[i + 1][j + 1] == 2 && // Comprobación de diagonal con la i+1 && j+1
+                                tablero[i][j + 3] == 2) ||
+                                (tablero[i + 1][j + 1] == 2 && // Comprobación de diagonal con la i+1 && j+1
                                 tablero[i + 1][j + 2] == 2 &&
-                                tablero[i + 1][j + 3] == 2) {
+                                tablero[i + 1][j + 3] == 2)*/ {
                             System.out.println(" El ganador es el jugador 2 ");
                         }
                     }
@@ -113,7 +113,7 @@ public class Enunciado1 {
 
                 //Pintar tablero
                 pintar(tablero);
-               /* comprobarGanador(tablero);*/
+                comprobarGanador(tablero);
             }
 
 
