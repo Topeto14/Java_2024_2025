@@ -64,7 +64,7 @@ public class Enunciado1 {
         public static void comprobarGanador(int tablero[][]) {
             for (int i = 0; i < tablero.length; i++) {
                 for (int j = 0; j < tablero[i].length; j++) {
-                    if (j != tablero.length - 3 && i != tablero.length - 3) { // Comprobar 3 posiciones antes del final
+                    if (j != tablero.length - 1  && i != tablero.length - 1) { // Comprobar 3 posiciones antes del final
                         if (tablero[i][j] == 1 &&
                                 tablero[i + 1][j] == 1 && // Comprobación de vertical con la i
                                 tablero[i + 2][j] == 1 &&
