@@ -87,7 +87,7 @@ public class Enunciado1 {
                                 tablero[i + 1][j + 1] == 2 && // Comprobación de diagonal con la i+1 && j+1
                                 tablero[i + 1][j + 2] == 2 &&
                                 tablero[i + 1][j + 3] == 2) {
-                            System.out.println(" El ganador es el jugador 1 ");
+                            System.out.println(" El ganador es el jugador 2 ");
                         }
                     }
                 }
