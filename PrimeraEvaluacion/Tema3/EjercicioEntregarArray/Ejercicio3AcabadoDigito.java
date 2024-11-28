@@ -2,7 +2,7 @@ package Tema3.EjercicioEntregarArray;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio3AcabadoDigito {
     public static int generarNumero(int min, int max){
         return (int) (Math.random()*(max-min+1)+min);
 
