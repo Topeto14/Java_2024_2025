@@ -23,8 +23,9 @@ package SegundaEvaluacion.Tema4.Personaje;
 public class TestPersonaje {
 
     public static void main(String[] args) {
-        Personaje jugador1 = new Personaje ("Pepin", "barbaro", "hombre",50);
-        Personaje jugador2 = new Personaje ("Pepina", "elfo", "mujer",70);
+
+        Personaje jugador1 = new Personaje ("Pepin", "barbaro", "hombre",50, Arma.TipoArma.MARTILLO);
+        Personaje jugador2 = new Personaje ("Juana","elfo","mujer",85, Arma.TipoArma.ESPADA);
 
         jugador1.setClase("Enano");
         jugador2.setVida(75);

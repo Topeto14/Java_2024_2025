@@ -15,13 +15,31 @@ package SegundaEvaluacion.Tema4.Personaje;
 //    -ToString
 
 public class Personaje {
+
     private String nombre;
     private String clase;
     private String sexo;
-    private int vida;
+    private Integer vida;
+    private Arma.TipoArma tipo;
 
-    public Personaje(String pepito, String barbaro, String hombre, int i) {
+
+    public Personaje(String nombre, String clase, String sexo, Integer vida, Arma.TipoArma tipo) {
+        this.nombre = nombre;
+        this.clase = clase;
+        this.sexo = sexo;
+        this.vida = vida;
+        this.tipo = tipo;
     }
+
+    public Personaje() {
+        this.nombre = " SinNombre";
+        this.clase = " Humano";
+        this.sexo = " Masculino";
+        this.vida = 10;
+        this.tipo = tipo;
+
+    }
+
 
     @Override
     public String toString() {
@@ -30,12 +48,11 @@ public class Personaje {
         sb.append(", clase='").append(clase).append('\'');
         sb.append(", sexo='").append(sexo).append('\'');
         sb.append(", vida=").append(vida);
+        sb.append(", tipo=").append(tipo);
         sb.append('}');
         return sb.toString();
     }
 
-    public Personaje() {
-    }
 
     public String getNombre() {
         return nombre;
@@ -61,11 +78,31 @@ public class Personaje {
         this.sexo = sexo;
     }
 
-    public int getVida() {
+    public Integer getVida() {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public void setVida(Integer vida) {
         this.vida = vida;
     }
+
+    public Arma.TipoArma getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Arma.TipoArma tipo) {
+        this.tipo = tipo;
+    }
+    /*Mis Metodo
+    - Añade un método en Personaje que sea golpear
+    public void golpear(Personaje personaje) {
+        this.arma.golpear(personaje);
+    }
+    */
+    public void golpear(Personaje personaje){
+
+    }
+
+
+
 }

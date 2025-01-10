@@ -1,7 +1,27 @@
 package SegundaEvaluacion.Tema4.Personaje;
 
+//1. Crear una nueva clase Arma
+//    Propiedades:
+//    - nombre de tipo String
+//    - tipo de tipo enum TipoArma
+//    - golpe de tipo Integer
+//
+//    Para crear un enum -> enum TipoArma { ESPADA, MARTILLO, HACHA }
+//
+//    Constructor:
+//    - con todas las propiedades -> new Arma("Espadón", TipoArma.ESPADA, 44);
+//    - vacío sin valores (que tome los valores por defecto) -> dejar en blanco el constructor
+//
+//    Métodos:
+//    - Getters, Setters y toString
+//    - public void golpear(Personaje personaje) {
+//        personaje.setVida(personaje.getVida() - this.golpe);
+//      }
+
 public class Arma {
-    enum TipoArma {ESPADA,MARTILLO, HACHA}
+
+    enum TipoArma {ESPADA, MARTILLO, HACHA}
+
     private String nombre;
     private TipoArma tipo;
     private Integer golpe;
@@ -48,6 +68,12 @@ public class Arma {
         sb.append('}');
         return sb.toString();
     }
+    //Mis métodos
+
+    /**
+     * Al personaje que se pasa como parámetro se le resta de vida el golpe del arma
+     * @param personaje
+     */
     public void golpear(Personaje personaje) {
         personaje.setVida(personaje.getVida()-this.golpe);
     }
