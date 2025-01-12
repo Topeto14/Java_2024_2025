@@ -1,0 +1,19 @@
+1. Modifica la clase Personaje
+ - Añande una propiedad nueva de tipo Arma
+ - Cambia el constructor para añadirle una Arma
+ - Añade getter y setter de la nueva propiedad
+ - Borra el método toString y vuelve a generarlo para que pinte el Arma
+
+2. Modifica la clase TestPersonaje, para que los personajes lleven un Arma.
+ - Jugador1 que lleve un martillo
+ - Jugador2 que lleve una espada
+
+3. Pinta jugador1 y jugador2
+
+4. Nivel Pro:
+ - Añade un método en Personaje que sea golpear
+ public void golpear(Personaje personaje) {
+    this.arma.golpear(personaje);
+ }
+ - Probar en TestPersonaje que jugador1 golpee a jugador2 con su arma
+ - Pinta los jugadores antes y después de golpear
