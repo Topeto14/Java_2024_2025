@@ -20,15 +20,15 @@ public class Personaje {
     private String clase;
     private String sexo;
     private Integer vida;
-    private Arma.TipoArma tipo;
+    private Arma arma;
 
 
-    public Personaje(String nombre, String clase, String sexo, Integer vida, Arma.TipoArma tipo) {
+    public Personaje(String nombre, String clase, String sexo, Integer vida, Arma arma) {
         this.nombre = nombre;
         this.clase = clase;
         this.sexo = sexo;
         this.vida = vida;
-        this.tipo = tipo;
+        this.arma = arma;
     }
 
     public Personaje() {
@@ -36,7 +36,7 @@ public class Personaje {
         this.clase = " Humano";
         this.sexo = " Masculino";
         this.vida = 10;
-        this.tipo = tipo;
+        this.arma = null ;
 
     }
 
@@ -48,7 +48,7 @@ public class Personaje {
         sb.append(", clase='").append(clase).append('\'');
         sb.append(", sexo='").append(sexo).append('\'');
         sb.append(", vida=").append(vida);
-        sb.append(", tipo=").append(tipo);
+        sb.append(", tipo=").append(arma);
         sb.append('}');
         return sb.toString();
     }
@@ -86,12 +86,12 @@ public class Personaje {
         this.vida = vida;
     }
 
-    public Arma.TipoArma getTipo() {
-        return tipo;
+    public Arma getArma() {
+        return arma;
     }
 
-    public void setTipo(Arma.TipoArma tipo) {
-        this.tipo = tipo;
+    public void setArma(Arma arma) {
+        this.arma = arma;
     }
     /*Mis Metodo
     - Añade un método en Personaje que sea golpear
@@ -99,8 +99,9 @@ public class Personaje {
         this.arma.golpear(personaje);
     }
     */
-    public void golpear(Personaje personaje){
 
+    public void golpear(Personaje personaje) {
+        this.arma.golpear(personaje);
     }
 
 

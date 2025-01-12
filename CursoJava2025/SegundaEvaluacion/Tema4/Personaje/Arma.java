@@ -20,8 +20,6 @@ package SegundaEvaluacion.Tema4.Personaje;
 
 public class Arma {
 
-    enum TipoArma {ESPADA, MARTILLO, HACHA}
-
     private String nombre;
     private TipoArma tipo;
     private Integer golpe;

@@ -24,13 +24,20 @@ public class TestPersonaje {
 
     public static void main(String[] args) {
 
-        Personaje jugador1 = new Personaje ("Pepin", "barbaro", "hombre",50, Arma.TipoArma.MARTILLO);
-        Personaje jugador2 = new Personaje ("Juana","elfo","mujer",85, Arma.TipoArma.ESPADA);
+        Personaje jugador1 = new Personaje ("Pepin", "barbaro", "hombre",50, new Arma("Espadon",TipoArma.ESPADA,20));
+        Personaje jugador2 = new Personaje ("Juana","elfo","mujer",85, new Arma("Thor",TipoArma.MARTILLO,15));
 
         jugador1.setClase("Enano");
         jugador2.setVida(75);
 
         System.out.println(jugador1);
         System.out.println(jugador2);
+
+        jugador1.golpear(jugador2);
+        System.out.println();
+        System.out.println(jugador2);
+        jugador2.golpear(jugador1);
+        System.out.println(jugador1);
+
     }
 }
