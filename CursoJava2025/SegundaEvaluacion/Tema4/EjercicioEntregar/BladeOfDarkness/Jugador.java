@@ -137,7 +137,7 @@ public class Jugador {
      * salud no es cero tras restar devuelve false, si la salud queda a cero o menos, la salud se pone a cero y se
      * devuelve true (muerto).
      * */
-    public Boolean reducirVida(int puntosD){
+    public Boolean reducirVida(Double puntosD){
         salud -= puntosD;
         if (salud <= 0) {
             salud = 0.0;
@@ -153,5 +153,26 @@ public class Jugador {
      * experiencia suba una centena (100, 200, 300, …) subes de nivel. El máximo de experiencia será por tanto
      * 1000.
      * */
+    public void golpear(Monstruo monstruo){
+        if (this.getArmaDerecha() != null) {
+            monstruo.reducirVida(this.getArmaDerecha().getPuntosD());
+            if (!this.getArmaDerecha().getDosManos()) {
+                if (this.getArmaIzquierda() != null) {
+                    monstruo.reducirVida(this.getArmaIzquierda().getPuntosD());
+                }
+            }
+        }
+        // Comprobar si has matado al monstruo
+        if(monstruo.getSalud()<=0){
+            monstruo.setSalud(0.0);  ;
+            System.out.println("El monstruo ha muerto ");
+            if (salud==0){
+              experiencia = (experiencia += 10)* monstruo.getNivel();
+            } else if (experiencia >= 100) {
+                nivel++;
+            }
+        }
+    }
+        //Subir la experiencia y el nivel si correspondiera
 
 }

@@ -29,7 +29,7 @@ public class Arma {
         this.tipo = tipo;
     }
 
-    public Integer getPuntosD() {
+    public Double getPuntosD() {
         return puntosD;
     }
 
