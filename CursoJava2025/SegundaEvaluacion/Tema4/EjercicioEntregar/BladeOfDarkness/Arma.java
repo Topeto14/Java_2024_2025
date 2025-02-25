@@ -3,10 +3,10 @@ package SegundaEvaluacion.Tema4.EjercicioEntregar.BladeOfDarkness;
 public class Arma {
     private String nombre ;
     private TipoArma tipo ;
-    private Integer puntosD ; // Puntos de daño
+    private Double puntosD ; // Puntos de daño
     private Boolean dosManos ;
 
-    public Arma(String nombre, TipoArma tipo, Boolean dosManos, Integer puntosD) {
+    public Arma(String nombre, TipoArma tipo, Boolean dosManos, Double puntosD) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.dosManos = dosManos;
@@ -33,7 +33,7 @@ public class Arma {
         return puntosD;
     }
 
-    public void setPuntosD(Integer puntosD) {
+    public void setPuntosD(Double puntosD) {
         this.puntosD = puntosD;
     }
 
