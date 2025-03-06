@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public abstract class  Persona {
 
-    private static Long Id = 0L;
-
+    protected Long Id = 0L;
     protected String nombre;
     protected String apellidos;
     protected String dniPasaporte ;
@@ -18,23 +17,28 @@ public abstract class  Persona {
     public Persona() {
     }
     //Constructor con todos los paremetros
-    public Persona(String nombre, String apellidos, String dniPasaporte, String email, String direccion, String ciudad, String pais, Integer telefono) {
+
+    public Persona(Long id, String nombre, String apellidos, String email, String dniPasaporte, String direccion, String ciudad, Integer telefono, String pais) {
+        Id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.dniPasaporte = dniPasaporte;
         this.email = email;
+        this.dniPasaporte = dniPasaporte;
         this.direccion = direccion;
         this.ciudad = ciudad;
-        this.pais = pais;
         this.telefono = telefono;
-        Persona.Id++;
+        this.pais = pais;
     }
+
+
     //Getters Ands Setters
-    public static Long getId() {
+
+
+    public Long getId() {
         return Id;
     }
 
-    public static void setId(Long id) {
+    public void setId(Long id) {
         Id = id;
     }
 
@@ -102,10 +106,13 @@ public abstract class  Persona {
         this.telefono = telefono;
     }
     // To String
+
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Persona{");
-        sb.append("nombre='").append(nombre).append('\'');
+        sb.append("Id=").append(Id);
+        sb.append(", nombre='").append(nombre).append('\'');
         sb.append(", apellidos='").append(apellidos).append('\'');
         sb.append(", dniPasaporte='").append(dniPasaporte).append('\'');
         sb.append(", email='").append(email).append('\'');
@@ -117,9 +124,8 @@ public abstract class  Persona {
         return sb.toString();
     }
 
-
-
     // Equals Ands hashCode por Dni
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
