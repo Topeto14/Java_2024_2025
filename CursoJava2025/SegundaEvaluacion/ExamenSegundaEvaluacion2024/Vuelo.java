@@ -136,13 +136,14 @@ public class Vuelo {
      * @return contador ;
      */
     public Integer verificarDisponibilidad(TipoAsiento tipoAsiento) {
-        Integer contador = 0;
-        for (Asiento asiento : this.asientos) {
-            if (asiento.getTipo().equals(tipoAsiento)&& asiento.getPasajero()==null) {
+        Integer contador = 0; //Inicializa un contador a 0
+        for (Asiento asiento : this.asientos) { //Recorre todos los asientos (Asiento"La clase" asiento "el nombre que le pondre": this.asiento"nombre de la propiedad que utilizare")
+            if (asiento.getTipo().equals(tipoAsiento)&& asiento.getPasajero()==null){
+                // Si el asiento es del tipo indicado y no tiene pasajero, incrementa el contador
                 contador++;
             }
         }
-        return contador;
+        return contador; //Devuelve el numero de asientos libres
     }
     /**
      * Devuelve el primer asiento del tipoAsiento indicado que está libre o null si no hay ninguno libre
