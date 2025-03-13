@@ -59,7 +59,7 @@ public class Revista extends Publicacion {
         sb.append('}');
         return sb.toString();
     }
-
+    /*
     @Override
     public ArrayList<Autor> getAutores() {
         //Creamos una lista de autores
@@ -71,5 +71,5 @@ public class Revista extends Publicacion {
         }
 
         return autores;
-    }
+    }*/
 }

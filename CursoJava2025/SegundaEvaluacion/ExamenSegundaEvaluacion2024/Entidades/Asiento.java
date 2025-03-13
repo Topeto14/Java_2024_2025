@@ -1,6 +1,7 @@
-package SegundaEvaluacion.ExamenSegundaEvaluacion2024;
+package SegundaEvaluacion.ExamenSegundaEvaluacion2024.Entidades;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Asiento {
 
@@ -14,14 +15,15 @@ public abstract class Asiento {
     //Constructores sin pasajero ni tipo asiento
 
     public Asiento(Long id, Double precioBase, Integer fila, String letra) {
-        Id = id;
+        this.Id = id;
         this.precioBase = precioBase;
         this.fila = fila;
-        Letra = letra;
+        this.Letra = letra;
     }
 
 
     // Getters Ands Setters
+
 
     public Long getId() {
         return Id;
@@ -79,7 +81,7 @@ public abstract class Asiento {
     public String toString() {
         final StringBuffer sb = new StringBuffer("Asiento{");
         sb.append("Id=").append(Id);
-        sb.append(", pasajero=").append(pasajero);
+        sb.append(", pasajero=").append(pasajero.getDniPasaporte());
         sb.append(", precioBase=").append(precioBase);
         sb.append(", fila=").append(fila);
         sb.append(", Letra='").append(Letra).append('\'');
@@ -89,6 +91,18 @@ public abstract class Asiento {
     }
 
     //Equals por Id
+
+    /* Ejemplo profesor
+
+    *   @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Asiento asiento = (Asiento) o;
+        return Objects.equals(id, asiento.id);
+    }
+    * */
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -102,12 +116,20 @@ public abstract class Asiento {
         return Objects.hashCode(Id);
     }
 
-    //Metodos
+//Metodos
 
     /**
      * Metodo que devuelve
      * @return la fila y la letra de un asiento
      */
+    /*Ejemplo de Javi
+
+    public String getCodigo() {
+        StringBuffer sb = new StringBuffer();
+        sb.append(this.fila).append("-").append(this.letra);
+        return sb.toString();
+    }
+    * */
 
     public String getCodigo(){
         return this.getFila() + " - " + this.getLetra();

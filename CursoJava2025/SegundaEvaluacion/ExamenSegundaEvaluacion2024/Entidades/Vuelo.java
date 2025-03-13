@@ -1,10 +1,11 @@
-package SegundaEvaluacion.ExamenSegundaEvaluacion2024;
+package SegundaEvaluacion.ExamenSegundaEvaluacion2024.Entidades;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Vuelo {
     private String codigo;
@@ -16,14 +17,16 @@ public class Vuelo {
     private Integer asientoDisponibles;
     private ArrayList<Asiento> asientos;
 
-    public Vuelo(String codigo, String origen, String destino, LocalDate fecha, LocalTime hora, Double precioBase, Integer asientoDisponibles, ArrayList<Asiento> asientos) {
-        this.codigo = codigo;
+    // EL UUID.randomUUID().toString(); genera codigos unicos de 36 caracteres aleatorios ejemplo f47ac10b-58cc-4372-a567-0e02b2c3d479
+    public Vuelo(String origen, String destino, LocalDate fecha, LocalTime hora, Double precioBase, Integer asientoDisponibles, ArrayList<Asiento> asientos) {
+        this.codigo = UUID.randomUUID().toString();
         this.origen = origen;
         this.destino = destino;
         this.fecha = fecha;
         this.hora = hora;
         this.precioBase = precioBase;
-        this.asientoDisponibles = 180;
+        this.asientoDisponibles = asientoDisponibles;
+
         this.asientos = new ArrayList<>();//Se Crea el arraylist poniendo el new ArrayList<>();
 
         //Crear Asientos
@@ -37,6 +40,39 @@ public class Vuelo {
             }
         }
     }
+    /* Ejemplo profesor
+
+    public Vuelo(String origen, String destino, LocalDate fecha,
+                 LocalTime hora, Double precioBase, Integer asientosDisponibles) {
+        this.codigo = UUID.randomUUID().toString();
+        this.origen = origen;
+        this.destino = destino;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.precioBase = precioBase;
+        this.asientosDisponibles = asientosDisponibles;
+
+        //Generar los asientos del vuelo
+        int numBusiness=0;
+        this.asientos = new ArrayList<>(this.asientosDisponibles);
+        for(int i=0; i < (this.asientosDisponibles*0.3); i++) {
+           char letra = (char) (65 + (i % 4));
+           AsientoBusiness ab = new AsientoBusiness((long) i, 200.0, i / 4,
+                   Character.toString(letra), true);
+           this.asientos.add(ab);
+           numBusiness++;
+        }
+
+        for(int i=numBusiness; i < (this.asientosDisponibles*0.7) + numBusiness; i++) {
+            char letra = (char) (65 + (i % 4));
+            AsientoTurista ab = new AsientoTurista((long) i,
+                    120.0, i / 4,
+                    Character.toString(letra), true);
+            this.asientos.add(ab);
+        }
+
+    }
+    * */
 
     public String getCodigo() {
         return codigo;
@@ -114,8 +150,15 @@ public class Vuelo {
         sb.append(", asientoDisponibles=").append(asientoDisponibles);
         sb.append(", asientos=").append(asientos);
         sb.append('}');
+        // Bucle que recorre la lista de asientos
+        for(Asiento as: this.asientos) {
+            sb.append(as.toString()); // Añade el resultado de toString() de cada asiento
+            sb.append("\n"); // Añade un salto de línea después de cada asiento
+        }
+        sb.append('}');
         return sb.toString();
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -166,10 +209,20 @@ public class Vuelo {
      * @param asiento
      * @return
      */
+    /* Ejemplo profesor
+    *  public boolean ocuparAsiento(Pasajero pasajero, Asiento asiento) {
+        if (asiento.getPasajero() == null) { //disponible
+            pasajero.setAsiento(asiento);
+            asiento.setPasajero(pasajero);
+            return true;
+        }
+        return false;
+    }
+    * */
     public boolean ocuparAsiento(Pasajero pasajero, Asiento asiento) {
         if (asiento.getPasajero() == null) {
             asiento.setPasajero(pasajero);
-            pasajero.setAsiento(asiento.getTipo());
+            pasajero.setAsiento(asiento);
             return true;
         } else {
             return false;
@@ -190,12 +243,21 @@ public class Vuelo {
             asiento.setPasajero(null);
         }
     }
+    /* Ejemplo profesor
+
+    *     public void liberarAsiento(Asiento asiento) {
+        asiento.getPasajero().setAsiento(null); //Importante esto primero
+        asiento.setPasajero(null);
+    }
+    * */
 
     /**
      * Calcula los días que faltan hasta el día del vuelo
      * @return
+     * Se utilizaria LocalDateTime si quiero la diferencia de horas.
      */
     public long diasFaltanVuelo() {
+        ////Period.between --> num años, num meses, num dias
         return ChronoUnit.DAYS.between(LocalDate.now(), this.getFecha());
     }
 
@@ -205,7 +267,7 @@ public class Vuelo {
      */
     public ArrayList<Pasajero> getPasajeros() {
         ArrayList<Pasajero> pasajerosVuelo = new ArrayList<>();
-        for(Asiento asiento: asientos) {
+        for(Asiento asiento: this.asientos) {
             if (asiento.getPasajero() != null)
                 pasajerosVuelo.add(asiento.getPasajero());
         }

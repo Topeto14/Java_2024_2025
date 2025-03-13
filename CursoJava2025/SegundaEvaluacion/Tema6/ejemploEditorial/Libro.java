@@ -68,9 +68,9 @@ public class Libro extends Publicacion{
         sb.append('}');
         return sb.toString();
     }
-
+    /*
     @Override
     public ArrayList<Autor> getAutores() {
         return new ArrayList<>(List.of(this.autor));
-    }
+    }*/
 }

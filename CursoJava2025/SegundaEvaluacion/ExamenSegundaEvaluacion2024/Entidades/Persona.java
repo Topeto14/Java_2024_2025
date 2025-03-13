@@ -1,10 +1,10 @@
-package SegundaEvaluacion.ExamenSegundaEvaluacion2024;
+package SegundaEvaluacion.ExamenSegundaEvaluacion2024.Entidades;
 
 import java.util.Objects;
 
 public abstract class  Persona {
 
-    protected Long Id = 0L;
+    protected Long Id ;
     protected String nombre;
     protected String apellidos;
     protected String dniPasaporte ;
@@ -12,14 +12,14 @@ public abstract class  Persona {
     protected String direccion;
     protected String ciudad;
     protected String pais ;
-    protected Integer telefono;
+    protected String telefono;
     //Constructor Vacio
     public Persona() {
     }
     //Constructor con todos los paremetros
 
-    public Persona(Long id, String nombre, String apellidos, String email, String dniPasaporte, String direccion, String ciudad, Integer telefono, String pais) {
-        Id = id;
+    public Persona(Long id, String nombre, String apellidos, String email, String dniPasaporte, String direccion, String ciudad, String telefono, String pais) {
+        this.Id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
@@ -98,11 +98,11 @@ public abstract class  Persona {
         this.pais = pais;
     }
 
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     // To String

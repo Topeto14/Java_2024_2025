@@ -71,6 +71,10 @@ public class Publicacion {
         return sb.toString();
     }
 
-    public abstract ArrayList<Autor> getAutores();
+    public ArrayList<Autor> getAutores() {
+        return null;
+    }
+
+
 }
-}
+

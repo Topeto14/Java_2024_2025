@@ -1,22 +1,22 @@
-package SegundaEvaluacion.ExamenSegundaEvaluacion2024;
+package SegundaEvaluacion.ExamenSegundaEvaluacion2024.Entidades;
 
-public class AsientoBussines extends Asiento{
-    protected boolean Comida;
+public class AsientoBussines extends Asiento {
+    protected boolean isComida;
 
     //Constructor
-    public AsientoBussines(Long id, Double precioBase, Integer fila, String letra, boolean comida) {
+    public AsientoBussines(Long id, Double precioBase, Integer fila, String letra, boolean isComida) {
         super(id, precioBase, fila, letra);
-        Comida = comida;
+        this.isComida = isComida;
         this.tipo = TipoAsiento.Business; // El asiento se pone a bussines.
     }
     //Getters and Setters
 
     public boolean isComida() {
-        return Comida;
+        return isComida;
     }
 
     public void setComida(boolean comida) {
-        Comida = comida;
+        isComida = comida;
     }
 
     // To String
@@ -24,7 +24,7 @@ public class AsientoBussines extends Asiento{
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("AsientoBussines{");
-        sb.append("Comida=").append(Comida);
+        sb.append("Comida=").append(isComida);
         sb.append(", Id=").append(Id);
         sb.append(", pasajero=").append(pasajero);
         sb.append(", precioBase=").append(precioBase);
@@ -42,9 +42,17 @@ public class AsientoBussines extends Asiento{
      * Si Tiene asiento Turista y Comida se le añade 30€
      * @return precio + 25%
      */
+    /* Ejemplo profesor
+      @Override
+    public Double calcularPrecio() {
+        return this.comida
+                ? (this.precioBase * 1.25 + 30)
+                : (this.precioBase * 1.25);
+    }
+    * */
     @Override
     public Double calcularPrecio() {
-        if (this.Comida) {
+        if (this.isComida) {
             return (this.precioBase * 1.25) + 30.0;
         }
         return this.precioBase * 1.25;
