@@ -113,6 +113,16 @@ public class Test {
                 .getAverage();
         System.out.println(mediaPopularidad);
 
+        mediaPopularidad = canciones.stream()
+                .mapToDouble(Cancion::getPopularidad)
+                .average()
+                .orElseThrow();
+
+        //EJ12 Modificar la popularidad de todas las canciones en 1%
+        canciones.stream()
+                .peek(c -> c.setPopularidad(c.getPopularidad() * 1.01))
+                .forEach(System.out::println);
+
     }
 
 }

@@ -11,6 +11,18 @@ public class EquipoFIFA extends Equipo{
 
     @Override
     public Integer calcularPuntos() {
-        return permiteCartasGold ? 5 * nivel : 2 * nivel;
+        return permiteCartasGold ? 5 * nivel : 2 * nivel; // Son expresiones terniarias
+        //     condicion ? valorTrue : valorSiFalse
     }
+
+    //* Se interpretaria así
+
+    //if (permiteCartasGold) {
+    //    return 5 * nivel;
+    //} else {
+    //    return 2 * nivel;
+    //}
+    // */
+
+
 }
