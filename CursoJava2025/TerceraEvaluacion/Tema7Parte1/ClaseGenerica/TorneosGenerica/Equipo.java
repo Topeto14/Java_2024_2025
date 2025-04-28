@@ -1,6 +1,7 @@
 package TerceraEvaluacion.Tema7Parte1.ClaseGenerica.TorneosGenerica;
 
 public abstract class Equipo {
+
     protected String nombre;
     protected Integer nivel;
 

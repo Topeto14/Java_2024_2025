@@ -2,7 +2,7 @@ package TerceraEvaluacion.Tema7Parte1.ClaseGenerica.TorneosGenerica;
 
 import java.util.ArrayList;
 
-public class Torneo <T extends Equipo>{
+public class Torneo <T extends Equipo> { //Parametros de tipo genericos.
     private String nombre;
     private ArrayList<T> equipos;
 

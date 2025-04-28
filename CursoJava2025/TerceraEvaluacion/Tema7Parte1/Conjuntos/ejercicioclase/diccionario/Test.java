@@ -30,6 +30,33 @@ public class Test {
 
         /**
          * ¿ CÓMO HARÍAS SI CADA PALABRA TUVIERA VARIAS ACEPCIONES/SIGNIFICADOS ?
+         * Lo Haría con List
+         *
+         * import java.util.List;
+         *
+         * public class Entrada {
+         *     private String palabra;
+         *     private List<String> traducciones;
+         *
+         *     public Entrada(String palabra, List<String> traducciones) {
+         *         this.palabra = palabra;
+         *         this.traducciones = traducciones;
+         *     }
+         *
+         *     public String getPalabra() {
+         *         return palabra;
+         *     }
+         *
+         *     public List<String> getTraducciones() {
+         *         return traducciones;
+         *     }
+         *
+         *     public void addTraduccion(String traduccion) {
+         *         if (!traducciones.contains(traduccion)) {
+         *             traducciones.add(traduccion);
+         *         }
+         *     }
+         * }
          */
 
     }

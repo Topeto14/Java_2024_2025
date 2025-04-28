@@ -10,7 +10,7 @@ public class Diccionario {
     //LO IMPORTANTE ES BUSCAR, PERO NO QUE ESTÉ ORDENADO, USARÍAMOS ARRAYLIST
 
     public Diccionario() {
-        this.palabras = new TreeSet<>(Comparator.comparing(Entrada::getPalabra));
+        this.palabras = new TreeSet<>(Comparator.comparing(Entrada::getPalabra)); // Ordena los objetos entrada según el valor que devuelva su método getpalabra().
     }
 
     public TreeSet<Entrada> getPalabras() {
