@@ -1,0 +1,13 @@
+1. Vamos a crear una clase Robot con propiedades: nombre y energia
+2. Vamos a crear dos subclases de Robot
+2.1 RobotLucha que añade  la propiedad fuerza.
+2.2 RobotCarrera que añade la propiedad velocidad.
+3. Vamos a crear una clase genérica Liga que acepte objetos de tipo T que hereden de Robot
+Así podremos crear ligas de robots de lucha y ligas de robots de carreras.
+Esta clase tendrá dos propiedades: nombre y una lista de robots.
+Añade métodos:
+3.1 Para añadir robot a la liga
+3.2 Mostrar participantes de la liga.
+
+Liga, propiedad ArrayList<Robot> equipos --> admite RobotLucha y RobotCarrera
+Liga<T extends Robot> propiedad ArrayList<T> equipos --> una liga solo admite RobotLucha o RobotCarrera, pero no mezclados

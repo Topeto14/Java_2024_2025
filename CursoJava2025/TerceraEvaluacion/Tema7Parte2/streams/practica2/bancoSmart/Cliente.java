@@ -2,13 +2,13 @@ package TerceraEvaluacion.Tema7Parte2.streams.practica2.bancoSmart;
 
 public class Cliente {
     // Atributos
-    String dni;
-    String nombre;
-    String email;
-    String telefono;
-    String direccion;
-    String ciudad;
-    String pais;
+    private String dni;
+    private String nombre;
+    private String email;
+    private String telefono;
+    private String direccion;
+    private String ciudad;
+    private String pais;
 
     // Constructor
 
@@ -77,6 +77,7 @@ public class Cliente {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
     // To String
 
     @Override

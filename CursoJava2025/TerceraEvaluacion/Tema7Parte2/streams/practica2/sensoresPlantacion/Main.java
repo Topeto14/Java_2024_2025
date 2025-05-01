@@ -1,5 +1,4 @@
 package TerceraEvaluacion.Tema7Parte2.streams.practica2.sensoresPlantacion;
-import TerceraEvaluacion.Tema7Parte2.streams.practica2.sensoresPlantacion.Registro;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
