@@ -1,6 +1,6 @@
-package TerceraEvaluacion.Tema7Parte3.practica3Finca.models;
+package TerceraEvaluacion.Tema7Parte3.practica3Finca.io;
 
-import com.sun.jdi.PathSearchingVirtualMachine;
+import TerceraEvaluacion.Tema7Parte3.practica3Finca.models.Finca;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 public class DAOFInca {
     // Propiedades
-    private ArrayList<Finca> fincas;
+    private static ArrayList<Finca> fincas;
     private static final Path fincasFile = Paths.get("CursoJava2025/TerceraEvaluacion/Tema7Parte3/practica3Finca/ficherosCsv/finca.csv");
 
     //Constructor
 
     public DAOFInca() throws IOException {
-        fincas = new ArrayList<>();
+        /** fincas = new ArrayList<>();*/
         cargarDatos();
     }
 
@@ -49,6 +49,43 @@ public class DAOFInca {
      * @return Finca si existe
      * @throws java.util.NoSuchElementException si no encuentra ninguno
      * */
+
+    public static Finca findById(Long id)throws IOException{
+        return fincas.stream()
+                .filter(finca -> finca.getId().equals(id))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    /**
+     * Añade una Finca a fincas
+     * @param f finca que se agrega
+     * */
+
+    public  void addFinca(Finca f){
+        fincas.add(f);
+    }
+    /**
+     * Elimina una Finca de la lista Finca
+     * @param f finca que se elimina
+     * */
+
+    public void deleteFinca(Finca f){
+        fincas.remove(f);
+    }
+
+    /**
+     * Buscar eficiente las fincas con ese nombre
+     * @param nombre el nombre que tiene la finca a buscar
+     * */
+
+    public  Finca findByName(String nombre){
+        return fincas.stream()
+                .filter(finca -> finca.getNombre().equals(nombre))
+                .findFirst()
+                .orElseThrow();
+    }
+
 
 
 
