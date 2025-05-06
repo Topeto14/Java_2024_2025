@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class DAOFInca {
     // Propiedades
@@ -35,9 +36,13 @@ public class DAOFInca {
        fincas = (ArrayList<Finca>) Files.newBufferedReader(fincasFile).lines()
                .map(line-> {
                    String[] fincaStr = line.split(",");
-                   return new Finca(Long.parseLong(fincaStr[0]),fincaStr[1],
-                           Double.parseDouble(fincaStr[2]),Double.parseDouble(fincaStr[3]),
-                           Double.parseDouble(fincaStr[4]),fincaStr[5],fincaStr[6]);
+                   return new Finca(Long.parseLong(fincaStr[0]),
+                           fincaStr[1],
+                           Double.parseDouble(fincaStr[2]),
+                           Double.parseDouble(fincaStr[3]),
+                           Double.parseDouble(fincaStr[4]),
+                           fincaStr[5],
+                           fincaStr[6]);
 
                })
                .toList();
@@ -84,6 +89,50 @@ public class DAOFInca {
                 .filter(finca -> finca.getNombre().equals(nombre))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    // Segunda Parte Metodos
+
+    /**
+     * devuelve todas las fincas ordenadas de menor a mayor superficie.
+     * */
+
+    public static List<Finca> getFincasPorSuperficie(){
+        return fincas.stream()
+                .sorted(Comparator.comparing(Finca::getSuperficie).reversed())
+                .toList();
+    }
+
+    /**
+     * devuelve las tres fincas más grandes
+     * */
+
+    public static List<Finca> getMasGrandes(){
+        return fincas.stream()
+                .sorted(Comparator.comparing(Finca::getSuperficie).reversed())
+                .limit(3)
+                .toList();
+    }
+
+    /**
+     * muestra las fincas agrupadas por ciudad.
+     * */
+
+    public static HashMap<String, List<Finca>> getFincasPorCiudad(){
+        return new  HashMap<>(fincas.stream()
+                .collect(Collectors.groupingBy(Finca::getLocalidad)));
+    }
+
+    /**
+     * devuelve el nombre de todas las fincas entre 50 y 150 metros cuadrados.
+     * */
+
+    public static List<String> getFincasMedio(){
+        return fincas.stream()
+                .filter(finca -> finca.getSuperficie()>=50)
+                .filter(finca -> finca.getSuperficie()<=150)
+                .map(Finca::getNombre)
+                .toList();
     }
 
 
