@@ -9,23 +9,24 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DAOFInca {
+public class DAOFinca {
     // Propiedades
-    private static ArrayList<Finca> fincas;
-    private static final Path fincasFile = Paths.get("CursoJava2025/TerceraEvaluacion/Tema7Parte3/practica3Finca/ficherosCsv/finca.csv");
+    private static List<Finca> fincas;
+    private static final Path fincasFile = Paths.get("CursoJava2025/TerceraEvaluacion/Tema7Parte3/practica3Finca/resources/finca.csv");
+
 
     //Constructor
 
-    public DAOFInca() throws IOException {
-        /** fincas = new ArrayList<>();*/
+    public DAOFinca()throws IOException {
         cargarDatos();
     }
 
     //Getters
 
-    public ArrayList<Finca> getFincas() {
+    public static List<Finca> getFincas() {
         return fincas;
     }
+
 
     //Metodos
 
@@ -33,19 +34,14 @@ public class DAOFInca {
      * y lo añadira a la fincas
      * */
     private void cargarDatos() throws IOException {
-       fincas = (ArrayList<Finca>) Files.newBufferedReader(fincasFile).lines()
-               .map(line-> {
-                   String[] fincaStr = line.split(",");
-                   return new Finca(Long.parseLong(fincaStr[0]),
-                           fincaStr[1],
-                           Double.parseDouble(fincaStr[2]),
-                           Double.parseDouble(fincaStr[3]),
-                           Double.parseDouble(fincaStr[4]),
-                           fincaStr[5],
-                           fincaStr[6]);
-
-               })
-               .toList();
+        fincas = Files.newBufferedReader(fincasFile).lines()
+                .map(line -> {
+                    String[] fincaStr = line.split(",");
+                    return new Finca(Long.parseLong(fincaStr[0]), fincaStr[1],
+                            Double.parseDouble(fincaStr[2]), Double.parseDouble(fincaStr[3]),
+                            Double.parseDouble(fincaStr[4]), fincaStr[5], fincaStr[6]);
+                })
+                .toList();
     }
 
     /**

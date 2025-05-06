@@ -19,10 +19,15 @@ public class DAOLectura {
     //Propiedades
 
     private static Set<Lectura> lecturas;
-    private static final Path lecturasFile = Paths.get("TerceraEvaluacion/Tema7Parte3/lecturasFile/ficherosCsv/lecturas.csv");
+    private static final Path lecturasFile = Paths.get("TerceraEvaluacion/Tema7Parte3/practica3Finca/resources/finca.csv");
 
     // Constructor
+
+
+
+
     public DAOLectura() throws IOException {
+        lecturas = new HashSet<>();
         cargarDatos();
     }
 
@@ -37,7 +42,7 @@ public class DAOLectura {
                                     Double.parseDouble(lecturaStr[1]), // Temperatura
                                     Double.parseDouble(lecturaStr[2]), // humedad
                                     LocalDateTime.parse(lecturaStr[3]), // momento
-                                    DAOFInca.findById(Long.parseLong(lecturaStr[4])) // Id de la finca
+                                    DAOFinca.findById(Long.parseLong(lecturaStr[4])) // Id de la finca
                             );
                         } catch (IOException e) {
                             throw new RuntimeException(e);
@@ -170,9 +175,7 @@ public class DAOLectura {
     }
 
 
-    public static List<Double> getTempDiaPorFinca(Integer id, LocalDate dia){
-        return
-    }
+
 
 
 
