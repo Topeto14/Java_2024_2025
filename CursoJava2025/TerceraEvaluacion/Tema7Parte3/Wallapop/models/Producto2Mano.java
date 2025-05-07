@@ -1,4 +1,4 @@
-package TerceraEvaluacion.Tema7Parte3.Wallapop;
+package TerceraEvaluacion.Tema7Parte3.Wallapop.models;
 
 public class Producto2Mano {
     private String id;

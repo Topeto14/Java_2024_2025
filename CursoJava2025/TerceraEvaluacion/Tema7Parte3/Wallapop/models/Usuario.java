@@ -1,4 +1,4 @@
-package TerceraEvaluacion.Tema7Parte3.Wallapop;
+package TerceraEvaluacion.Tema7Parte3.Wallapop.models;
 
 import java.time.LocalDate;
 import java.util.Objects;
