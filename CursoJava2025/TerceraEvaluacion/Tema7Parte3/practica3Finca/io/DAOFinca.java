@@ -37,9 +37,13 @@ public class DAOFinca {
         fincas = Files.newBufferedReader(fincasFile).lines()
                 .map(line -> {
                     String[] fincaStr = line.split(",");
-                    return new Finca(Long.parseLong(fincaStr[0]), fincaStr[1],
-                            Double.parseDouble(fincaStr[2]), Double.parseDouble(fincaStr[3]),
-                            Double.parseDouble(fincaStr[4]), fincaStr[5], fincaStr[6]);
+                    return new Finca(Long.parseLong(fincaStr[0]),
+                            fincaStr[1],
+                            Double.parseDouble(fincaStr[2]),
+                            Double.parseDouble(fincaStr[3]),
+                            Double.parseDouble(fincaStr[4]),
+                            fincaStr[5],
+                            fincaStr[6]);
                 })
                 .toList();
     }

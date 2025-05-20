@@ -6,7 +6,7 @@ public class TestIncidencia {
         Incidencia incidencia2 = new Incidencia(2,Estado.en_proceso,"Ascensor sucio","limpiarlo");
         Incidencia incidencia3 = new Incidencia(3,Estado.abierto,"Cambiar foco del pasillo","comprar foco y ponerlo");
         Incidencia incidencia4 = new Incidencia(4,Estado.abierto,"Buzon roto","cambiar buzon");
-        Incidencia incidencia5 = new Incidencia(5,Estado.abierto,"Timbre silenciado","llamar tecnico");
+        Incidencia incidencia5 = new Incidencia(5,Estado.abierto,"Timbre silenciado","llamar tecnico.csv");
 
         System.out.println("Incidencias");
         System.out.println(incidencia1);
