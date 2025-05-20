@@ -23,7 +23,7 @@ public class DAOTicketsSoporte {
         //1. Cargar usuarios
         //List<Usuario> usuarios;
         try {
-            Files.lines(Paths.get("java2025/resources/examen2024/usuarios.csv"))
+            Files.lines(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/usuarios.csv"))
                     .map(linea -> {
                         List<String> tokens = Arrays.asList(linea.split(","));
                         Usuario user = new Usuario(
@@ -44,7 +44,7 @@ public class DAOTicketsSoporte {
 
         //2. Cargar técnicos
         try {
-            Files.lines(Paths.get("java2025/resources/examen2024/tecnico.csv"))
+            Files.lines(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/tecnico.csv"))
                     .forEach(linea -> {
                         List<String> tokens = Arrays.asList(linea.split(","));
                         Tecnico tec = new Tecnico(
@@ -64,7 +64,7 @@ public class DAOTicketsSoporte {
 
         //3. Cargar Tickets Soporte
         try {
-            Files.lines(Paths.get("java2025/resources/examen2024/tickets.csv"))
+            Files.lines(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/tickets.csv"))
                     .forEach(linea -> {
                         List<String> tokens = Arrays.asList(linea.split(","));
 
@@ -99,7 +99,7 @@ public class DAOTicketsSoporte {
     public static void saveCSV(ServicioSoporte ss) {
         try {
             //Usuarios
-            Files.write(Paths.get("java2025/resources/examen2024/usuarios.csv"),
+            Files.write(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/usuarios.csv"),
                     ss.getUsuarios().stream()
                             .map(g -> { //objeto Usuario -> String (línea)
                                 StringBuffer sb = new StringBuffer();
@@ -114,7 +114,7 @@ public class DAOTicketsSoporte {
                             .toList());
 
             //Técnicos
-            Files.write(Paths.get("java2025/resources/examen2024/tecnico.csv"),
+            Files.write(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/tecnico.csv"),
                     ss.getTecnicos().stream()
                             .map(g -> { //objeto Tecnico -> String (línea)
                                 StringBuffer sb = new StringBuffer();
@@ -130,7 +130,7 @@ public class DAOTicketsSoporte {
                             .toList());
 
             //Tickets
-            Files.write(Paths.get("java2025/resources/examen2024/tickets.csv"),
+            Files.write(Paths.get("CursoJava2025/TerceraEvaluacion/Examen2024/resource/tickets.csv"),
                     ss.getTickets().stream()
                             .map(g -> { //objeto Tecnico -> String (línea)
                                 StringBuffer sb = new StringBuffer();
