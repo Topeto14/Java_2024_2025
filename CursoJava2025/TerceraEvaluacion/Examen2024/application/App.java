@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import static TerceraEvaluacion.Examen2024.io.DAOTicketsSoporte.grabarCSV;
+import static TerceraEvaluacion.Examen2024.io.DAOTicketsSoporte.loadCSV;
 
 public class App {
     public static void main(String[] args) throws IOException {
 
-        ServicioSoporte ss = DAOTicketsSoporte.cargarCSV();
+        ServicioSoporte ss = DAOTicketsSoporte.loadCSV();
         Scanner scanner = new Scanner(System.in);
         int opcion;
         do {
@@ -74,7 +74,7 @@ public class App {
                     System.out.println("Ticket eliminado.");
                     break;
                 case 7:
-                    DAOTicketsSoporte.grabarCSV(ss);
+                    DAOTicketsSoporte.loadCSV(ss);
                     System.out.println("Datos guardados. Saliendo...");
                     break;
                 default:
